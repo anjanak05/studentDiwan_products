@@ -1,8 +1,12 @@
 import React from "react";
 
-function ProductCard(data) {
-  let products = data.data;
+function ProductCard({ data }) {
+  let products = data;
+  console.log("products", products);
 
+  if (products.length === 0) {
+    return <p> No Products Found</p>;
+  }
   return (
     <div className="product-list">
       {products?.map((item) => (
